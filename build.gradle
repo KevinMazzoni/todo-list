@@ -1,0 +1,29 @@
+allprojects {
+    apply plugin: "idea"
+    apply plugin: "eclipse"
+    idea {
+        module {
+            inheritOutputDirs = true
+        }
+    }
+
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+    }
+}
+
+subprojects {
+
+    apply plugin: "java"
+    apply plugin: "maven"
+
+    group "com.todo"
+    version = version
+
+    repositories {
+        mavenCentral()
+    }
+
+}
